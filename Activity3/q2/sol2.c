@@ -17,7 +17,7 @@ int main()
       break;
   }
 
-  wait(0);
+  wait(0); // Wait for all child processes to finish
   printf("This is child process %ld with parent %ld\n", (long)getpid(), (long)getppid());
 
   return 0;
