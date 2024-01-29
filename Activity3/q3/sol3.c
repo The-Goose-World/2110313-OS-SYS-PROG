@@ -2,8 +2,9 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <sys/wait.h> // <- add this line to use wait
+#include <stdlib.h>
 
-main()
+int main()
 {
   int i;
   int n;
