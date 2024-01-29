@@ -3,7 +3,7 @@
 #include <sys/types.h>
 #include <sys/wait.h> // <- add this line to use wait
 
-int main()
+main()
 {
   int i;
   int n;
@@ -19,6 +19,4 @@ int main()
 
   wait(0); // Wait for all child processes to finish
   printf("This is child process %ld with parent %ld\n", (long)getpid(), (long)getppid());
-
-  return 0;
 }
