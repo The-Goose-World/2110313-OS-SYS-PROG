@@ -4,7 +4,7 @@
 #include <sys/wait.h> // <- add this line to use wait
 #include <stdlib.h>
 
-int main()
+main()
 {
   int i;
   int n;
@@ -14,8 +14,10 @@ int main()
   {
     childpid = fork();
     if (childpid == 0)
+    {
+      printf("This is process %ld with parent %ld\n", (long)getpid(), (long)getppid());
       exit(0);
-    sleep(100);
+    }
+    sleep(30);
   }
-  printf("This is process %ld with parent %ld\n", (long)getpid(), (long)getppid());
 }
