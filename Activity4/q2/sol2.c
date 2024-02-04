@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <sys/wait.h>
 int main()
 {
   int run = 1;
@@ -15,6 +16,39 @@ int main()
     3. child use execvp() to run command
     4. parent call wait() until user enter "exit"
     */
+    char delim[] = " \t\n";
+    char **tokens;
+    char string[256];
+    int numtokens;
+    int i;
+    fgets(string, 256, stdin);
+    numtokens = tokenize(string, delim, &tokens);
+    if (strcmp(tokens[0], "exit") == 0)
+    {
+      run = 0;
+      return 0;
+    }
+
+    pid_t pid;
+    pid = fork();
+
+    if (pid < 0)
+    {
+      perror("Error: cannot fork\n");
+      exit(1);
+    }
+    else if (pid == 0)
+    {
+
+      execvp(tokens[0], tokens);
+      // If execvp fails, it will reach here
+      perror("Error executing command");
+      exit(1);
+    }
+    else
+    {
+      wait(NULL);
+    }
   }
 }
 /*
