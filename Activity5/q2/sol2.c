@@ -3,26 +3,21 @@
 
 #define NUM_THREADS 10
 
-// Thread function
-void *display_number(void *arg)
+void *display_number(void *data)
 {
-  int thread_number = *((int *)arg);
-  printf("This is thread %d\n", thread_number);
-  return NULL;
+  printf("This is thread %d\n", *((int *)data));
 }
 
 int main()
 {
   pthread_t threads[NUM_THREADS];
   int thread_args[NUM_THREADS];
-  int i;
 
-  // Create threads
-  for (i = 0; i < NUM_THREADS; i++)
+  for (int i = 0; i < NUM_THREADS; i++)
   {
-    thread_args[i] = i + 1; // Thread numbers start from 1
+    thread_args[i] = i + 1;
     pthread_create(&threads[i], NULL, display_number, &thread_args[i]);
-    pthread_join(threads[i], NULL); // Wait for this thread to complete before starting the next one
+    pthread_join(threads[i], NULL);
   }
 
   return 0;
