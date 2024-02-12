@@ -11,12 +11,20 @@ void *say_hello(void *data)
     sleep(1);
   }
 }
-void main()
+
+void main(int argc, char *argv[])
 {
+  if (argc != 3)
+  {
+    printf("usage: labthread1 arg1 arg2\n");
+    return 1;
+  }
+
   pthread_t t1, t2;
 
-  pthread_create(&t1, NULL, say_hello, "hello from 1");
-  pthread_create(&t2, NULL, say_hello, "hello from 2");
+  pthread_create(&t1, NULL, say_hello, argv[1]);
+  pthread_create(&t2, NULL, say_hello, argv[2]);
+
   pthread_join(t1, NULL);
   pthread_join(t2, NULL);
 }
