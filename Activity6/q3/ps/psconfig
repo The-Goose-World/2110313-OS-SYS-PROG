@@ -1,0 +1,8 @@
+logdir .
+logfn logfile.html
+imagename gifim
+user 6430014321 User
+quiet
+portable true
+run myrun
+exp myexp
