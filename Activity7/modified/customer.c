@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 	//
 	// OS -- OPEN NAMED SEMAPHORE HERE
 	//
-	sem_t *sem = sem_open("/callcenter", 0); // Assuming the semaphore is already created by callcenter
+	sem_t *sem = sem_open("callcenter", 0); // Assuming the semaphore is already created by callcenter
 	if (sem == SEM_FAILED)
 	{
 		perror("sem_open failed");
