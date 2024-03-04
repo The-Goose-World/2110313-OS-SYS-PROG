@@ -6,8 +6,12 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/titor/Chula/3-2/2110313-OS-SYS-PROG/Activity3",
-      "program": "/Users/titor/Chula/3-2/2110313-OS-SYS-PROG/Activity3/build/Debug/outDebug"
+      "cwd": "/Users/kuranasaki/cu/2110313-OS-SYS-PROG/Activity8",
+      "osx": {
+        "MIMode": "lldb",
+        "miDebuggerPath": "lldb-mi",
+        "program": "/Users/kuranasaki/cu/2110313-OS-SYS-PROG/Activity8/a.out"
+    },
     }
   ]
 }
