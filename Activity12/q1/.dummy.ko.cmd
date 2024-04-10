@@ -1,0 +1,1 @@
+cmd_/home/kuranasaki/work/2110313-OS-SYS-PROG/Activity12/q1/dummy.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/kuranasaki/work/2110313-OS-SYS-PROG/Activity12/q1/dummy.ko /home/kuranasaki/work/2110313-OS-SYS-PROG/Activity12/q1/dummy.o /home/kuranasaki/work/2110313-OS-SYS-PROG/Activity12/q1/dummy.mod.o;  true

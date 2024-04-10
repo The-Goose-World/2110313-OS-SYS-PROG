@@ -1,0 +1,1 @@
+cmd_/home/kuranasaki/work/2110313-OS-SYS-PROG/Activity12/q5/cpsysinfo.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/kuranasaki/work/2110313-OS-SYS-PROG/Activity12/q5/cpsysinfo.ko /home/kuranasaki/work/2110313-OS-SYS-PROG/Activity12/q5/cpsysinfo.o /home/kuranasaki/work/2110313-OS-SYS-PROG/Activity12/q5/cpsysinfo.mod.o;  true

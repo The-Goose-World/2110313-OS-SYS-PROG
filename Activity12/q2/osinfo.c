@@ -13,12 +13,10 @@ MODULE_DESCRIPTION("\"osinfo\" Character Device");
 static int dev_major;
 static int dev_open = 0;
 static char *f_ptr;
-static const char f_data0[] = "0:CP ENG CU OS 2022S2 - Instructors\n1:\tVeera Muangsin,
-                              Ph.D.\n2 :\tKrerk Piromsopa,
-                  Ph.D.\n3 :\tThongchai Rojkangsadan\n ";
+static const char f_data0[] = "0:CP ENG CU OS 2022S2 - Instructors\n1:\tVeera Muangsin, Ph.D.\n2:\tKrerk Piromsopa, Ph.D.\n3:\tThongchai Rojkangsadan\n";
+static const char f_data1[] = "0:CP ENG CU OS 2023S2 – Students, Group Name: :(){:|:&};:\n1:\t6430014321 Kongphop Chariyasathapond\n2 :\t6432067021 Thanat Wongsamut\n";
     // prototypes for device functions
-    static int
-    device_open(struct inode *, struct file *);
+static int device_open(struct inode *, struct file *);
 static int device_release(struct inode *inode, struct file *file);
 static ssize_t device_read(struct file *, char *, size_t, loff_t *);
 // File operations structor
@@ -55,7 +53,11 @@ static int device_open(struct inode *inode, struct file *file)
     return -EBUSY;
   dev_open++;
   printk(KERN_INFO "dev minor %d\n", MINOR(inode->i_rdev));
-  f_ptr = (char *)f_data0;
+  if (MINOR(inode->i_rdev) == 1) {
+    f_ptr = (char *)f_data1;
+  } else {
+    f_ptr = (char *)f_data0;
+  }
   // lock module
   try_module_get(THIS_MODULE);
   return 0;

@@ -1,0 +1,1 @@
+cmd_/home/kuranasaki/work/2110313-OS-SYS-PROG/Activity12/q1/modules.order := {   echo /home/kuranasaki/work/2110313-OS-SYS-PROG/Activity12/q1/dummy.ko; :; } | awk '!x[$$0]++' - > /home/kuranasaki/work/2110313-OS-SYS-PROG/Activity12/q1/modules.order

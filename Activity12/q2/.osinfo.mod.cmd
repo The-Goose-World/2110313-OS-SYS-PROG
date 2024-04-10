@@ -1,0 +1,1 @@
+cmd_/home/kuranasaki/work/2110313-OS-SYS-PROG/Activity12/q2/osinfo.mod := { echo  /home/kuranasaki/work/2110313-OS-SYS-PROG/Activity12/q2/osinfo.o;  echo; } > /home/kuranasaki/work/2110313-OS-SYS-PROG/Activity12/q2/osinfo.mod
